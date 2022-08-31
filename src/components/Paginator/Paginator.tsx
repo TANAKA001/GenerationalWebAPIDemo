@@ -59,7 +59,7 @@ const Paginator: FC<PaginatorProps> = (props: PaginatorProps) => {
           {props.showFirstLast && (
             <Button
               theme={"white"}
-              size={"sm"}
+              size={"md"}
               width={"square"}
               disabled={firstFlag()}
               onClick={() => props.onPageChange(1)}
@@ -72,7 +72,7 @@ const Paginator: FC<PaginatorProps> = (props: PaginatorProps) => {
           {props.showNextPrevious && (
             <Button
               theme={"white"}
-              size={"sm"}
+              size={"md"}
               width={"square"}
               disabled={firstFlag()}
               onClick={() => props.onPageChange(props.currentPage - 1)}
@@ -86,7 +86,7 @@ const Paginator: FC<PaginatorProps> = (props: PaginatorProps) => {
               <Button
                 key={index}
                 theme={`${currentFlag(p) ? "primary" : "white"}`}
-                size={"sm"}
+                size={"md"}
                 width={"square"}
                 onClick={() => props.onPageChange(p)}
               >
@@ -99,7 +99,7 @@ const Paginator: FC<PaginatorProps> = (props: PaginatorProps) => {
           {props.showNextPrevious && (
             <Button
               theme={"white"}
-              size={"sm"}
+              size={"md"}
               width={"square"}
               disabled={lastFlag()}
               onClick={() => props.onPageChange(props.currentPage + 1)}
@@ -112,7 +112,7 @@ const Paginator: FC<PaginatorProps> = (props: PaginatorProps) => {
           {props.showFirstLast && (
             <Button
               theme={"white"}
-              size={"sm"}
+              size={"md"}
               width={"square"}
               disabled={lastFlag()}
               onClick={() => props.onPageChange(totalPageCount())}

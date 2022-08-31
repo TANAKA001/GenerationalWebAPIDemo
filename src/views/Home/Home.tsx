@@ -19,7 +19,7 @@ const Home = () => {
           <Column md={"4"}>
             <Card>
               <CardBody>
-                <SidebarMenuItem link={"/overview"} label={"App"} icon={"layout"} />
+                <SidebarMenuItem link={"/my-workspaces"} label={"App"} icon={"layout"} />
                 <SidebarMenuItem link={"/dev-guide/typography"} label={"Developer Guide"} icon={"circle-empty"} />
               </CardBody>
             </Card>

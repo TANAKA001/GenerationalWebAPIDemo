@@ -1,6 +1,7 @@
 // views/NewClientEntry/NewClientEntry.tsx
 
 import React, { useState } from "react";
+import { useNavigate  } from "react-router-dom";
 import "./NewClientEntry.style.scss";
 
 import Section from "../../../components/Grid/Section";
@@ -15,28 +16,33 @@ import Paginator from "../../../components/Paginator";
 import { SampleData } from "../../../constants/SampleData";
 import { sortByKey } from "../../../functions";
 import Breadcrumbs from "../../../components/Breadcrumbs";
-import { Link } from "react-router-dom";
+import ButtonGroup from "../../../components/ButtonGroup";
 
 const NewClientEntry = () => {
+  const navigate = useNavigate();
+
   // New Client Data Grid
   const sampleData = SampleData.map((company ,index) => {
     return {
-      client: company.clients.name,
+      companyName: company.companies.companyName || company.companies.dbaName,
       number: company.clients.number,
-      company: company.companies.companyName,
-      dba: company.companies.dbaName,
-      nav: <Link to={`${company.clients.number}`}>Edit</Link>,
+      stage: "Direct to Market",
+      productType: "n/a",
+      productSubType: "n/a",
+      entryComplete: "n/a",
     };
   });
   const [newClients, setNewClients] = useState<any[]>(sampleData);
   const [selectedColumn, setSelectedColumn] = useState<string>("client");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const dataGridColumns = [
-    { key: "client", name: "Client" },
+    { key: "companyName", name: "Company" },
     { key: "number", name: "Client Number" },
-    { key: "company", name: "Company" },
-    { key: "dba", name: "DBA" },
-    { key: "nav", name: "" },
+    { key: "stage", name: "Stage" },
+    { key: "status", name: "Status" },
+    { key: "productType", name: "Product Type" },
+    { key: "productSubType", name: "Product Sub Type" },
+    { key: "entryCompleted", name: "Entry Completed" },
   ];
   const onSelectedColumnChange = (c: string) => {
     setSelectedColumn(c);
@@ -45,7 +51,13 @@ const NewClientEntry = () => {
   };
 
   // Filer New Clients Form
+  const [filterPanelOpen, setFilterPanelOpen] = useState(false);
   const [searchValue, setSearchValue] = useState<string | number>("");
+
+  /** Navigate To Client */
+  const editClient = (id) => {
+    navigate(`${id}`);
+  };
 
   return (
     <div className={"NewClientEntry"} data-testid={"NewClientEntry"}>
@@ -70,12 +82,17 @@ const NewClientEntry = () => {
       <Section>
         <Row>
           <Column>
-            <div>
+            <div className={"filter-form"}>
               <InputText value={searchValue} onValueChange={setSearchValue} prefixIcon={"search"} clearButton />
-              <Button>
+              <Button onClick={() => setFilterPanelOpen(!filterPanelOpen)}>
                 <Icon icon={"filter"} /> More Filters
               </Button>
             </div>
+            {filterPanelOpen && (
+              <Panel>
+                More Filters Here.
+              </Panel>
+            )}
             <Panel theme={"white"}>
               <DataGrid
                 columns={dataGridColumns}
@@ -83,6 +100,8 @@ const NewClientEntry = () => {
                 selectedColumn={selectedColumn}
                 selectedColumnChange={onSelectedColumnChange}
                 order={sortOrder}
+                selectableRows={true}
+                onRowSelect={editClient}
               />
             </Panel>
             <Paginator itemCount={250} perPage={20} currentPage={1} onPageChange={() => null} />

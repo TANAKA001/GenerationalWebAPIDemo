@@ -5,7 +5,7 @@ import "./ProfilePicture.style.scss";
 import Icon from "../Icon";
 
 export interface ProfilePictureProps {
-  size?: "thumb" | "sm" | "md" | "lg";
+  size?: "thumb" | "sm" | "md" | "lg" | "xl";
   image?: string;
 }
 

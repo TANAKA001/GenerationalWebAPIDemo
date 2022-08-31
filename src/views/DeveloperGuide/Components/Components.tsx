@@ -255,8 +255,6 @@ const Components = () => {
                     <Button theme={"secondary"}>Secondary</Button>
                     <Button theme={"info"}>Info</Button>
                     <Button theme={"success"}>Success</Button>
-                    <Button theme={"success-outline"}>Success-Outline</Button>
-                    <Button theme={"warning"}>Warning</Button>
                     <Button theme={"danger"}>Danger</Button>
                     <Button theme={"danger-outline"}>Danger-outline</Button>
                     <Button theme={"link"}>Link</Button>

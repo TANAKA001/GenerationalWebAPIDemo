@@ -21,4 +21,12 @@
       }
     }
   }
+
+  tr.selectable {
+    cursor: pointer;
+
+    &:hover {
+      background-color: $blue-bkg;
+    }
+  }
 }

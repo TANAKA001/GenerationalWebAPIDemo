@@ -11,10 +11,10 @@
   display: flex;
   align-items: flex-end;
   font-weight: $font-weight-semibold;
-  font-size: $font-size-sm;
+  font-size: $font-size;
   line-height: $line-height;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  letter-spacing: .2px;
+  //text-transform: uppercase;
   margin-bottom: 5px;
 
   .tooltip {

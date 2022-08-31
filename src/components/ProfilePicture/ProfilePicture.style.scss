@@ -8,6 +8,7 @@ $profile-size-thumb: 30px;
 $profile-size-sm: 40px;
 $profile-size-md: 86px;
 $profile-size-lg: 110px;
+$profile-size-xl: 180px;
 
 // SCSS
 .profile-picture {
@@ -57,6 +58,12 @@ $profile-size-lg: 110px;
 
   &.lg {
     @include circle($profile-size-lg, $gray-300);
+    border: 10px solid $white;
+    padding: 3px;
+  }
+
+  &.xl {
+    @include circle($profile-size-xl, $gray-300);
     border: 10px solid $white;
     padding: 3px;
   }

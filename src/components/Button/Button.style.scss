@@ -6,8 +6,8 @@
 // VARIABLES
 $button-height-xs: 24px;
 $button-height-sm: 32px;
-$button-height: 40px;
-$button-height-lg: 50px;
+$button-height: $input-height;
+$button-height-lg: 60px;
 
 $button-padding: 20px;
 
@@ -30,6 +30,7 @@ button[class^="btn-"] {
   font-size: $button-font-size;
   font-weight: $font-weight-semibold;
   line-height: $button-height;
+  white-space: nowrap;
   letter-spacing: .2px;
 
   &:disabled {
@@ -130,40 +131,40 @@ button[class^="btn-"] {
   }
 
   &-info {
-    border-color: $teal;
-    background-color: $teal;
+    border-color: $info;
+    background-color: $info;
     color: $white;
 
     &:hover {
-      border-color: $teal-light;
-      background-color: $teal-light;
+      border-color: lighten($info, 5%);
+      background-color: lighten($info, 5);
     }
 
     &:active {
-      border-color: $teal-dark;
-      background-color: $teal-dark;
+      border-color: darken($info, 5%);
+      background-color: darken($info, 5%);
     }
 
     &:disabled {
-      border: 1px solid rgba($teal-dark, .75);
-      background: rgba($teal-dark, .75);
+      border: 1px solid rgba($info, .75);
+      background: rgba($info, .75);
     }
   }
 
   &-info-outline {
-    border-color: $teal;
+    border-color: $info;
     background-color: transparent;
-    color: $teal;
+    color: $info;
 
     &:hover {
-      background: rgba($teal, .11);
-      color: $teal;
+      background: rgba($info, .11);
+      color: $info;
     }
 
     &:active {
-      border-color: $teal-dark;
-      background: rgba($teal-dark, .11);
-      color: $teal-dark;
+      border-color: darken($info, 5%);
+      background: rgba(darken($info, 5%), .11);
+      color: darken($info, 5%);
     }
 
     &:disabled {

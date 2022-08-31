@@ -20,6 +20,8 @@ export interface DataGridProps {
   order?: "desc" | "asc";
   columns: Column[];
   rows: any[];
+  selectableRows?: boolean;
+  onRowSelect?;
 }
 
 const defaultProps: DataGridProps = {
@@ -28,6 +30,7 @@ const defaultProps: DataGridProps = {
   columns: [],
   rows: [],
   selectedColumnChange: (k) => k,
+  selectableRows: false,
 };
 
 const DataGrid: FC<DataGridProps> = (props: DataGridProps) => {
@@ -44,7 +47,8 @@ const DataGrid: FC<DataGridProps> = (props: DataGridProps) => {
    * Selects a row by id/key
    */
   const selectRow = (id: string) => {
-    console.log(`select row with id: ${id}`);
+    // console.log(`select row with id: ${id}`);
+    props.onRowSelect(id);
   };
 
   return (
@@ -73,7 +77,12 @@ const DataGrid: FC<DataGridProps> = (props: DataGridProps) => {
         <tbody>
           {props.rows &&
             props.rows.map((row, index) => (
-              <DataGridRow key={index}>
+              <DataGridRow
+                id={index}
+                key={index}
+                selectable={props.selectableRows}
+                onRowSelect={selectRow}
+              >
                 {props.columns.map((col) => (
                   <DataGridCell key={col.key}>{row[col.key]}</DataGridCell>
                 ))}
