@@ -4,7 +4,6 @@ import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import "./BackButton.style.scss";
 import Button from "../Button/Button";
-import Icon from "../Icon";
 
 export interface BackButtonProps {
   label?: string;
@@ -20,8 +19,8 @@ const BackButton: FC<BackButtonProps> = (props: BackButtonProps) => {
   const navigate = useNavigate();
 
   return (
-    <Button theme={"control-black"} onClick={() => navigate(-1)}>
-      <Icon icon={"chevron-left"} /> {props.label}
+    <Button theme={"control-black"} icon={"chevron-left"} onClick={() => navigate(-1)}>
+      {props.label}
     </Button>
   );
 };

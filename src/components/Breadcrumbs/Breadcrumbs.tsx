@@ -1,6 +1,7 @@
 // Breadcrumbs.tsx
 
 import React, { FC } from "react";
+// import { useLocation } from "react-router-dom";
 import "./Breadcrumbs.style.scss";
 import Crumb, { CrumbProps } from "./Crumb";
 
@@ -15,6 +16,10 @@ const defaultProps: BreadcrumbsProps = {
 
 const Breadcrumbs: FC<BreadcrumbsProps> = (props: BreadcrumbsProps) => {
   props = { ...defaultProps, ...props };
+
+  // const location = useLocation();
+  // console.log(location);
+  // console.log(location.pathname.split("/").filter(v => v.length > 0));
 
   return (
     <ol

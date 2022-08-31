@@ -9,7 +9,7 @@ $button-height-sm: 32px;
 $button-height: $input-height;
 $button-height-lg: 60px;
 
-$button-padding: 20px;
+$button-padding: 25px;
 
 $button-border-radius: $border-radius;
 
@@ -432,5 +432,13 @@ button[class^="btn-"] {
       background-color: transparent;
       color: $blue;
     }
+  }
+
+  &.icon-left {
+    padding-left: 0;
+  }
+
+  &.icon-right {
+    padding-right: 0;
   }
 }

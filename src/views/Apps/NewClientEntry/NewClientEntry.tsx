@@ -17,6 +17,7 @@ import { SampleData } from "../../../constants/SampleData";
 import { sortByKey } from "../../../functions";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import ButtonGroup from "../../../components/ButtonGroup";
+import BackButton from "../../../components/BackButton";
 
 const NewClientEntry = () => {
   const navigate = useNavigate();
@@ -66,15 +67,19 @@ const NewClientEntry = () => {
           <Column>
             <div className={"page-header"}>
               <h1 className={"flex-grow-1"}>New Client Entry</h1>
-              <Button theme={"primary"}>Add New Client</Button>
+              <Button theme={"primary-outline"}>Add New Client</Button>
             </div>
-            <Breadcrumbs
-              crumbs={[
-                { name: "Home", url: "/" },
-                { name: "Apps", url: "/apps" },
-                { name: "New Client Entry", url: "/apps/new-client-entry" },
-              ]}
-            />
+            <div className={"d-flex"}>
+              <BackButton />
+              <Breadcrumbs
+                crumbs={[
+                  { name: "Home", url: "/" },
+                  { name: "Apps", url: "/apps" },
+                  { name: "New Client Entry", url: "/apps/new-client-entry" },
+                ]}
+              />
+            </div>
+
           </Column>
         </Row>
       </Section>
@@ -84,8 +89,8 @@ const NewClientEntry = () => {
           <Column>
             <div className={"filter-form"}>
               <InputText value={searchValue} onValueChange={setSearchValue} prefixIcon={"search"} clearButton />
-              <Button onClick={() => setFilterPanelOpen(!filterPanelOpen)}>
-                <Icon icon={"filter"} /> More Filters
+              <Button theme={"primary"} icon={"filter"} onClick={() => setFilterPanelOpen(!filterPanelOpen)}>
+                More Filters
               </Button>
             </div>
             {filterPanelOpen && (

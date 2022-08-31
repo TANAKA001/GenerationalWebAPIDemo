@@ -2,6 +2,8 @@
 
 import React, { FC } from "react";
 import "./Button.style.scss";
+import {IconOptions} from "../Icon/Icons.d";
+import Icon from "../Icon";
 
 type ButtonThemeOptions =
   | "default"
@@ -27,6 +29,8 @@ export type ButtonProps = {
   type?: "button" | "submit" | "reset";
   size?: "xs" | "sm" | "md" | "lg";
   width?: "narrow" | "standard" | "wide" | "block" | "square";
+  icon?: IconOptions;
+  iconPosition?: "left" | "right";
   onClick?: () => void;
   children?: React.ReactNode;
 };
@@ -37,6 +41,7 @@ const defaultProps: ButtonProps = {
   type: "button",
   size: "md",
   width: "standard",
+  iconPosition: "left",
 };
 
 const Button: FC<ButtonProps> = (props: ButtonProps) => {
@@ -45,12 +50,15 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
   return (
     <button
       id={props.id}
-      className={`btn btn-${props.theme} btn-${props.size} btn-${props.width} ${props.disabled ? "disabled" : ""}`}
+      className={`btn btn-${props.theme} btn-${props.size} btn-${props.width} ${props.disabled ? "disabled" : ""} ${props.icon ? "icon-" + props.iconPosition : ""}`}
       data-testid='Button'
       type={props.type}
       disabled={props.disabled}
       onClick={props.onClick}
     >
+      {props.icon && (
+        <Icon icon={props.icon} />
+      )}
       {props.children}
     </button>
   );
