@@ -1,0 +1,31 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+// SCSS
+.card-body {
+  position: relative;
+  flex: 1 0 auto;
+  background: inhert;
+  max-width: 100%;
+  padding: $spacing-md;
+
+  &.padding-xs {
+    padding: $spacing-xs $spacing-sm;
+  }
+
+  &.padding-sm {
+    padding: $spacing-sm;
+  }
+
+  &.padding-md {
+    padding: $spacing-md;
+  }
+
+  &.padding-lg {
+    padding: $spacing-lg $spacing-md;
+  }
+}

@@ -1,0 +1,14 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.input-footnote {
+  margin-top: 5px;
+  color: $gray-700;
+  font-size: $font-size-sm;
+}

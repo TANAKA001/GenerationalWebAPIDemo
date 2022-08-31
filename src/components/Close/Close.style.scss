@@ -1,0 +1,98 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$close-size-sm: 24px;
+$close-size-md: 28px;
+$close-size-lg: 30px;
+
+// SCSS
+.close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  opacity: .5;
+  border: 0;
+  border-radius: 50%;
+  padding: 2px;
+  text-decoration: none;
+
+  .icon {
+    position: absolute;
+  }
+
+  // SIZES
+  &.sm {
+    width: $close-size-sm;
+    min-width: $close-size-sm;
+    height: $close-size-sm;
+  }
+
+  &.md {
+    width: $close-size-md;
+    min-width: $close-size-md;
+    height: $close-size-md;
+  }
+
+  &.lg {
+    width: $close-size-lg;
+    min-width: $close-size-lg;
+    height: $close-size-lg;
+  }
+
+  // THEMES
+  &.default {
+    @include theme-light;
+    background: transparent;
+
+    &:hover {
+      opacity: 1;
+      background: rgba($gray-700, .1);
+    }
+  }
+
+  &.info {
+    @include theme-info;
+    background: transparent;
+
+    &:hover {
+      opacity: 1;
+      background: rgba($info, .07);
+    }
+  }
+
+  &.danger {
+    @include theme-danger;
+    background: transparent;
+
+    &:hover {
+      opacity: 1;
+      background: rgba($danger, .07);
+    }
+  }
+
+  &.warning {
+    @include theme-warning;
+    background: transparent;
+
+    &:hover {
+      opacity: 1;
+      background: rgba($warning, .07);
+    }
+  }
+
+  &.success {
+    @include theme-success;
+    background: transparent;
+
+    &:hover {
+      opacity: 1;
+      background: rgba($success, .07);
+    }
+  }
+
+
+}

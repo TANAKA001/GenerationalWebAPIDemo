@@ -1,0 +1,23 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.input-label {
+  display: flex;
+  align-items: flex-end;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-sm;
+  line-height: $line-height;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+
+  .tooltip {
+    margin-left: 5px;
+  }
+}

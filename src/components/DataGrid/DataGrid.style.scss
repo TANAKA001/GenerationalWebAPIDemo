@@ -1,0 +1,24 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.data-grid {
+
+  th.data-grid-cell {
+    vertical-align: center;
+
+    &.sortable {
+      cursor: pointer;
+
+      &.selected,
+      &:hover {
+        //background-color: $gray-100;
+      }
+    }
+  }
+}

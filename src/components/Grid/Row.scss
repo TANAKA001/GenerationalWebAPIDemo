@@ -1,0 +1,28 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$gutter-x: 15px;
+$gutter-y: 0;
+
+// SCSS
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: -1 * $gutter-y;
+  margin-right: -0.5 * $gutter-x;
+  margin-left: -0.5 * $gutter-x;
+
+  & > * {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: $gutter-x * 0.5;
+    padding-left: $gutter-x * 0.5;
+    margin-top: $gutter-y;
+  }
+}

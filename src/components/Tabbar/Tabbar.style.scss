@@ -1,0 +1,18 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.tabbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0 0 10px;
+  border-bottom: 1px solid $gray-300;
+  list-style: none;
+  padding: 0;
+}

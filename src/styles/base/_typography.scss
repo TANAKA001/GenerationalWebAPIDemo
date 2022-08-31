@@ -1,0 +1,296 @@
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+/*sass-lint:disable no-vendor-prefix no-qualifying-elements*/
+html {
+  font-size: $root-pixel;
+}
+
+body {
+  line-height: $line-height-base;
+  color: $font-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 $spacing-xs;
+  padding: 0;
+  text-align: inherit;
+  line-height: $line-height;
+  color: $heading-color;
+  font-family: $font-family-sans-serif;
+  font-weight: $font-weight-semibold;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: $font-weight-bold;
+  //line-height: $line-height;
+  letter-spacing: .2px;
+
+  @media #{$target-md-up} {}
+}
+
+h2 {
+  font-size: 2.6rem;
+  //font-weight: $font-weight-semibold;
+  //line-height: 5.6rem;
+  letter-spacing: .2px;
+
+  @media #{$target-md-up} {}
+}
+
+h3 {
+  font-size: 2.2rem;
+  //font-weight: $font-weight-semibold;
+  //line-height: 4rem;
+  letter-spacing: .1px;
+
+  @media #{$target-md-up} {}
+}
+
+h4 {
+  font-size: 1.8rem;
+  //font-weight: $font-weight-semibold;
+  //line-height: 3.2rem;
+  letter-spacing: .2px;
+
+  @media #{$target-md-up} {}
+}
+
+h5 {
+  font-size: $font-size; // RECOMMENDED: set to the same size as the default paragraph size
+  font-weight: $font-weight-bold;
+  //line-height: 2.6rem;
+  letter-spacing: .1px;
+}
+
+h6 {
+  font-size: $font-size-sm;  // RECOMMENDED: set to the same size as the small paragraph size
+  font-weight: $font-weight-bold;
+  //line-height: 2.4rem;
+  letter-spacing: .2px;
+}
+
+p {
+  margin: 0 0 $spacing-xs;
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+blockquote,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+blockquote,
+blockquote p {
+  display: block;
+  position: relative; // removes quotes in all browsers
+  margin: $spacing-md $spacing-md;
+  padding: 0;
+  max-width: 700px;
+  color: $gray-700;
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-light;
+  font-style: normal;
+  quotes: none;
+
+  cite {
+    display: block;
+    margin-left: $spacing-sm;
+    color: $black;
+    font-size: $font-size;
+    font-weight: $font-weight-bold;
+
+    &::before {
+      content: '- ';
+    }
+  }
+}
+
+blockquote:before,
+blockquote:after {
+  content: ''; // removes quotes in all browsers
+  content: none;
+}
+
+blockquote::before {
+  // content: '&ldquo;';
+}
+
+blockquote::after {
+  // content: '&rdquo;';
+}
+
+//blockquote:after { // Optional - Adds the cited author after the block quote.
+//  display: block;
+//  margin: 10px 0;
+//  color: $gray;
+//  font-family: $font-family-sans-serif;
+//  font-size: 1.6rem;
+//  content: '\2013 \2003' attr(cite);
+//}
+
+address {
+  display: block;
+  margin-bottom: 0;
+  line-height: inherit; // removes italic in some browsers
+  font-style: normal;
+}
+
+pre {
+  @include no-scroll-bar;
+  position: relative;
+  max-width: 100%;
+  overflow-y: auto;
+  font-family: $font-family-monospace;
+  font-size: 1.6rem;
+  -ms-overflow-style: scrollbar;
+}
+
+pre code {
+  @include no-scroll-bar;
+  display: block;
+  background: rgba($blue, .1);
+  padding: 10px 15px;
+  max-width: 100%;
+  min-height: 45px;
+  color: $purple;
+  font-size: .9em;
+  overflow-y: auto;
+
+   //&[class*="language-"] { // to add spacing at the bottom of code blocks
+   //  margin-bottom: $spacing-lg;
+   //}
+
+  &[lang]::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $gray-700;
+    padding: 1px 4px;
+    color: $white;
+    font-size: $font-size-sm;
+    content: attr(lang);
+  }
+}
+
+// inline typography sass
+// ---------------------------
+i {
+}
+
+b {
+  font-weight: bolder; // Add the correct font weight in Chrome, Edge, and Safari.
+}
+
+em {
+  font-family: inherit;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+strong {
+}
+
+mark {
+  background-color: $yellow-light;
+  padding: 0 .3rem;
+}
+
+q {
+  display: inline;
+  quotes: "“" "”" "‘" "’";
+  font-style: italic;
+
+  &::before {
+    content: open-quote;
+  }
+
+  &::after {
+    content: close-quote;
+  }
+}
+
+abbr[title],
+abbr[data-original-title] {
+  // sass-lint:disable no-vendor-prefix
+  border-bottom: 0; // Remove the bottom border in Chrome 57-
+  cursor: help; // Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+  text-decoration: underline;
+  text-decoration: underline dotted; // Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+  -webkit-text-decoration: underline dotted;
+}
+
+code,
+var,
+kbd,
+samp {
+  background-color: $blue-bkg;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  font-family: $font-family-monospace; // Correct the inheritance and scaling of font size in all browsers.
+  font-size: 1.01em; // Correct the odd `em` font sizing in all browsers.
+  font-weight: $font-weight-normal;
+  line-break: strict;
+  word-break: keep-all;
+}
+
+code {
+  color: $blue;
+  font-weight: $font-weight-normal;
+}
+
+var {
+  color: $purple;
+  font-weight: $font-weight-semibold;
+  font-style: italic;
+}
+
+kbd {
+  font-weight: $font-weight-semibold;
+}
+
+samp {
+  background-color: $gray-700;
+  color: $white;
+  font-weight: $font-weight-normal;
+}
+
+small {
+  font-size: 80%; // Add the correct font size in all browsers.
+}
+
+sub,
+sup {
+  position: relative;
+  vertical-align: baseline;
+  line-height: 0;
+  font-size: 75%;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*sass-lint:enable no-vendor-prefix no-qualifying-elements*/

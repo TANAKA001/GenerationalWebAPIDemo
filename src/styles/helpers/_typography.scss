@@ -1,0 +1,123 @@
+// Typography
+// ==================================================
+.h1 {
+  @extend h1;
+}
+
+.h2 {
+  @extend h2;
+}
+
+.h3 {
+  @extend h3;
+}
+
+.h4 {
+  @extend h4;
+}
+
+.h5 {
+  @extend h5;
+}
+
+.h6 {
+  @extend h6;
+}
+
+.pretitle {
+  display: block;
+  font: {
+    family: $font-family-sans-serif;
+    size: 1.8rem;
+    weight: $font-weight-semibold;
+  }
+  line-height: 1;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+
+.subtitle {
+  display: block;
+  font: {
+    family: $font-family-sans-serif;
+    size: 2rem;
+    weight: $font-weight-normal;
+  }
+  line-height: $line-height;
+}
+
+h1, h2 {
+  .pretitle {
+    font: {
+      size: .43em;
+    }
+  }
+
+  .subtitle {
+    font: {
+      size: .56em;
+    }
+  }
+}
+
+.shat-shot {
+  line-height: 5.6rem;
+  color: $heading-color;
+  font-size: 6rem;
+  font-weight: $font-weight-light;
+}
+
+@each $name, $color in $colors {
+  .color-#{$name} {
+    color: $color !important;
+  }
+}
+
+.meta-data {
+
+}
+
+.font-size-sm {
+  font-size: $font-size-sm;
+}
+
+.font-size-lg {
+  font-size: $font-size-lg;
+}
+
+.small {
+  font-size: .8em;
+}
+
+.footnote {
+  font-size: 1rem;
+}
+
+.text-bold {
+  font-weight: $font-weight-bold;
+}
+
+.text-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-all-caps {
+  text-transform: uppercase;
+}
+
+.text-strikethrough {
+  text-decoration: line-through;
+}
+
+.font-family-mono {
+  font-family: $font-family-monospace;
+}

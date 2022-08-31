@@ -1,0 +1,326 @@
+// Forms
+// ==========================================================================
+form {
+  display: block;
+  width: 100%;
+  max-width: $max-form-width;
+}
+
+fieldset {
+  margin: 0 0 $spacing-sm;  // Correct the padding in Firefox.
+  border: 1px solid $brand-secondary;
+  border-radius: $border-radius;
+  padding: $spacing-md $spacing-sm;
+  min-width: 0;
+}
+
+legend {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  color: inherit;
+  font-size: 1.8rem;
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+  letter-spacing: -0.2px;
+  color: $black;
+  font-size: $font-size;
+  font-weight: $font-weight-semibold;
+  line-height: 2.2rem;
+}
+
+input:focus {
+  outline: 0;  // Remove the stupid outer glow in Webkit
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0; // Remove the margin in Firefox and Safari.
+  line-height: 1.15;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+input {
+  overflow: visible;  // Show the overflow in Edge.
+}
+
+// Text Inputs
+// -----------------------------------------------
+input[type="date"],
+input[type="datetime"], // Deprecated
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list],
+select,
+textarea { // normalize all inputs across browsers
+  display: block;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: $spacing-xs $spacing-sm;
+  width: 100%;
+  height: $input-height;
+  color: $black;
+  font-size: $font-size;
+
+  &:hover {
+    // do nothing
+  }
+
+  &:focus {
+    @include add-focus;
+  }
+}
+
+input[type="date"],
+input[type="datetime"], // Deprecated
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea {
+  &:read-only {
+    background-color: $gray-100;
+    color: $gray-700;
+  }
+}
+
+// sass-lint:disable no-vendor-prefixes
+::-webkit-input-placeholder { // Chrome, Safari, Opera and Edge
+  color: $gray-400;
+  font-size: $font-size;
+}
+
+// sass-lint:disable no-vendor-prefixes
+:-moz-placeholder { // Firefox 4 through 18
+  color: $gray-400;
+  font-size: $font-size;
+}
+
+// sass-lint:disable no-vendor-prefixes
+//noinspection CssInvalidPseudoSelector
+::-moz-input-placeholder {  // Firefox 19+
+  color: $gray-400;
+  font-size: $font-size;
+}
+
+// sass-lint:disable no-vendor-prefixes
+:-ms-input-placeholder {  // IE10 and IE11
+  color: $gray-400;
+  font-size: $font-size;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;  // Correct the cursor style of increment and decrement buttons in Chrome.
+}
+
+[type="search"] {
+  outline-offset: -2px; // Correct the odd appearance in Chrome and Safari.
+  -webkit-appearance: textfield; // Correct the outline style in Safari.
+
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;  // Hide the cancel button & Remove the inner padding in Chrome and Safari on macOS.
+  }
+}
+
+[type='text']::-ms-clear {
+  display: none;  // removes the clear button in edge
+}
+
+[type='date'],
+[type='time'],
+[type="datetime-local"] {
+  &::-webkit-clear-button {
+    display: none;
+  }
+
+  &::-ms-clear {
+    display: none;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+[type='time'] {
+  -moz-appearance: textfield; // removes the up and down arrows in firefox
+}
+
+[type='range'] {
+  $thumb-size: 30px;
+  $track-height: 5px;
+
+  -webkit-appearance: none; // Hides the slider so that custom slider can be made
+  width: 100%; // Specific width is required for Firefox.
+  height: $input-height;
+  background: transparent; // Otherwise white in Chrome
+
+  // RANGE THUMB
+  @mixin thumb {
+    -webkit-appearance: none;
+    border: none;
+    border-radius: calc(var($thumb-size) / 2);
+    height: $thumb-size;
+    width: $thumb-size;
+    background: $blue;
+    cursor: pointer;
+    margin-top: - $thumb-size / 2 + $track-height / 2; // You need to specify a margin in Chrome, but in Firefox and IE it is automatic
+    //box-shadow: 0 0 1px 1px rgba($black, .5);
+  }
+  &::-webkit-slider-thumb { @include thumb; }
+  &::-moz-range-thumb { @include thumb; }
+  &::-ms-thumb { @include thumb; }
+
+
+  // RANGE TRACK
+  @mixin track {
+    cursor: pointer;
+    border-radius: $track-height / 2;
+    border: none;
+    width: 100%;
+    height: $track-height;
+    background: $gray-300;
+  }
+  &::-webkit-slider-runnable-track { @include track; }
+  &::-moz-range-track { @include track; }
+  &::-ms-track {
+    @include track;
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  // RANGE FOCUS
+  &:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    //background: #2497E3;
+  }
+}
+
+// Textareas
+// -----------------------------------------------
+textarea {
+  display: block;  // Remove the default vertical scrollbar in IE 10+.
+  width: 100%;
+  height: auto; // Move the label to the top
+  min-height: 90px;
+  overflow: auto;
+  vertical-align: top;
+  line-height: $line-height;
+  resize: vertical;
+}
+
+// File Upload
+// -----------------------------------------------
+::-webkit-file-upload-button {
+  font: inherit; // Correct the inability to style clickable types in iOS and Safari.
+  -webkit-appearance: button; // Change font properties to `inherit` in Safari.
+}
+
+// Radio & Checkbox
+// -----------------------------------------------
+[type="checkbox"],
+[type="radio"] {
+  padding: 0;  // Add the correct box sizing in IE 10.
+  box-sizing: border-box; // Remove the padding in IE 10.
+}
+
+// Buttons
+// -----------------------------------------------
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"] {
+  width: auto;  // Correct the inability to style clickable types in iOS and Safari.
+  overflow: visible;
+  text-transform: none;
+  letter-spacing: inherit;  // Fix IE7 display bug
+  -webkit-appearance: button;  // Fix IE7 display bug
+  -webkit-font-smoothing: inherit;  // Remove the inheritance of text transform in Firefox.
+
+  &:focus {
+    @include add-focus;
+  }
+
+  &::-moz-focus-inner {
+    border-style: none;  // Remove the inner border and padding in Firefox.
+    padding: 0;
+  }
+
+  &:-moz-focusring {
+    outline: 1px dotted ButtonText;  // Restore the focus sass unset by the previous rule.
+  }
+}
+
+
+// Selects
+// -----------------------------------------------
+select {
+  display: block;
+  margin: 0;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right .7em top 50%;
+  background-size: .65em auto;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 35px; // makes room for the caret icon
+  text-transform: none;
+  font-weight: $font-weight-bold;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;  // Remove the inheritance of text transform in Firefox.
+}
+
+select[multiple] {
+  vertical-align: top;  // Move the label to the top
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select option {
+  font-weight: $font-weight-normal;
+}
+
+// Other
+// -----------------------------------------------
+output {
+  display: inline-block;
+}
+
+progress {
+  vertical-align: baseline;  // Add the correct vertical alignment in Chrome, Firefox, and Opera.
+}

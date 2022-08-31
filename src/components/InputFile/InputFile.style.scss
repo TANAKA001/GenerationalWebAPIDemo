@@ -1,0 +1,49 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.input-file {
+  padding: $spacing-xs 0;
+}
+
+.image-preview {
+  &:empty {
+    display: none;
+  }
+}
+
+.file-dropzone {
+  display: block;
+  position: relative;
+  border: 1px dashed $brand-secondary;
+  background: $gray-100;
+  padding: $spacing-lg $spacing-sm;
+  text-align: center;
+  color: $gray-700;
+  font-size: $font-size;
+
+  &.fileover {
+    background: rgba($teal, .3);
+  }
+
+  &.uploading {
+    background: rgba($gray, .3);
+    border-color: $gray;
+  }
+
+  input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+  }
+}

@@ -1,0 +1,15 @@
+.caret {
+  &:not(.open) {
+    &:after {
+      @include triangle('down', currentColor, 4px);
+      margin-left: 5px;
+    }
+  }
+
+  &.open {
+    &:after {
+      @include triangle('up', currentColor, 4px);
+      margin-left: 5px;
+    }
+  }
+}

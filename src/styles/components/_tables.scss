@@ -1,0 +1,37 @@
+table {
+  th {
+    &.clickable {
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba($blue-bkg, .5);
+      }
+    }
+
+    //fa-ionc {
+    //  display: none;
+    //  color: $gray;
+    //  font-size: $font-size-sm;
+    //}
+
+    &.active {
+      //background-color: rgba($blue-bkg, .4);
+
+      //&.ASC {
+      //  fa-ionc {
+      //    display: inline-block;
+      //    color: $gray;
+      //    font-size: $font-size-sm;
+      //  }
+      //}
+
+      //&.DESC {
+      //  fa-ionc {
+      //    display: inline-block;
+      //    color: $gray;
+      //    font-size: $font-size-sm;
+      //  }
+      //}
+    }
+  }
+}

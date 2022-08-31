@@ -1,0 +1,7 @@
+# InputLabel
+
+## Usage
+
+```tsx
+    <InputLabel />
+```

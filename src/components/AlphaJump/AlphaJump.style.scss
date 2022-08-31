@@ -1,0 +1,62 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$alpha-size: 22px;
+$selected-color: $blue;
+
+// SCSS
+.alpha-jump {
+  display: flex;
+  flex-direction: column;
+  opacity: .4;
+  border-radius: ($alpha-size / 2);
+  padding: ($alpha-size / 2) 0;
+  width: $alpha-size;
+  color: $font-color;
+  font-size: $font-size-sm;
+
+  &:hover {
+    opacity: .9;
+  }
+
+  .alpha {
+    display: flex;
+    position: relative;
+    flex: 1 0 auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    cursor: pointer;
+    width: $alpha-size;
+    height: $alpha-size;
+
+    &.selected {
+      background: $selected-color;
+      color: $white;
+    }
+
+    .pin {
+      display: none;
+      position: absolute;
+      right: -50px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: $gray;
+      width: 40px;
+      height: 40px;
+      font-size: 1.5em;
+    }
+
+    &:hover {
+      @include theme-dark;
+
+      .pin {
+        display: flex;
+      }
+    }
+  }
+}

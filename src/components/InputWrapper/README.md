@@ -1,0 +1,7 @@
+# InputWrapper
+
+## Usage
+
+```tsx
+    <InputWrapper />
+```

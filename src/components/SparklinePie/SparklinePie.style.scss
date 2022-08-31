@@ -1,0 +1,25 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$size: 30px;
+
+// SCSS
+.sparkline-pie {
+  @include circle($size, $gray-400);
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  overflow: hidden;
+
+  .inner-pie {
+    @include circle($size, transparent);
+    position: absolute;
+
+    .complete {
+      background: conic-gradient($lime 100%, $lime 0) !important;
+    }
+  }
+}

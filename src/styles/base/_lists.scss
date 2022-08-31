@@ -1,0 +1,22 @@
+// Lists
+// ==========================================================================
+ul, ol, dl {
+  margin: 1em 0;
+  font-size: 1.1em;
+}
+
+li, dt, dd {
+  line-height: $line-height;
+}
+
+li {
+  ul, ol {
+    margin-top: 0;  // removes top margin on nested lists
+  }
+}
+
+dl {
+  dt {
+    font-weight: $font-weight-bold;
+  }
+}

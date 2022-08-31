@@ -1,0 +1,77 @@
+files:
+  include: '_sass/**/*.s+(a|c)ss'
+  ignore:
+    - .sass-cache/**/*
+    - node_modules/**/*
+    - styles/bootstrap/**/*
+    - styles/vendor/**/*
+syntax:
+  include:
+    - scss
+    - sass
+resolvers:
+  property-sort-order: 1
+  attribute-quotes: 1
+declaration-property-unit-whitelist:
+  font-size: "rem"
+  line-height: "em"
+rules:
+  class-name-format:
+    - 1
+    - convention: hyphenatedlowercase #hyphenatedbem
+  clean-import-paths:
+    - 1
+    - leading-underscore: false
+    - filename-extension: false
+  empty-line-between-blocks:
+    - 1
+    - include: true
+    - allow-single-line-rulesets: true
+  final-newline:
+    - 1
+    - include: true
+  force-attribute-nesting: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
+  hex-length:
+    - 0
+    - style: long
+  hex-notation:
+    - 1
+    - style: lowercase
+  id-name-format:
+    - 1
+    - convention: hyphenatedlowercase #hyphenatedbem
+  indentation:
+    - 0
+    - size: 2
+  leading-zero:
+    - 1
+    - include: false
+  mixins-before-declarations: 1
+  nesting-depth:
+    - 1
+    - max-depth: 4
+  no-color-keywords: 0
+  no-color-literals: 0
+  no-css-comments: 1
+  no-debug: 1
+  no-duplicate-properties: 1
+  no-empty-rulesets: 0
+  no-extends: 0
+  no-ids: 0
+  no-important: 1
+  no-invalid-hex: 1
+  no-mergeable-selectors: 0
+  no-qualifying-elements: 0
+  no-url-domains: 0
+  no-url-protocols: 0
+  no-vendor-prefixes: 1
+  property-sort-order:
+    - 1
+    - order: concentric
+  shorthand-values: 1
+  space-around-operator: 1
+  space-before-brace: 1
+options:
+  optOut: true

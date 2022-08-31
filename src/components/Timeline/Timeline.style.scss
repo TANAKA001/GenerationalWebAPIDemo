@@ -1,0 +1,76 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$timeline-border-width: 2px;
+$timeline-border-color: $gray;
+$timeline-complete-color: $blue;
+$timeline-bullet-size: 30px;
+
+// SCSS
+.timeline {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: $spacing-md 0;
+
+  .timeline-block {
+    display: flex;
+    position: relative;
+    flex: 1 1 auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: max-content;
+
+    &.last {
+      flex: 0 1 auto;
+    }
+  }
+
+  .moment {
+    @include circle(30px, $timeline-border-color);
+    border: $timeline-border-width solid $timeline-border-color;
+    min-width: fit-content;
+    text-align: center;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: -2em;
+      white-space: nowrap;
+      color: $black;
+      font-weight: $font-weight-bold;
+      content: attr(data-label);
+    }
+
+    &.complete {
+      border-color: $timeline-complete-color;
+      background-color: $timeline-complete-color;
+    }
+
+    &.in-progress {
+      border-color: $timeline-complete-color;
+      background-color: $white;
+    }
+
+    &.incomplete {
+      border-color: $timeline-border-color;
+      background-color: $timeline-border-color;
+    }
+  }
+
+  .line {
+    flex: 1 0 auto;
+    border-top: 2px solid $timeline-border-color;
+  }
+
+  .moment.complete + .line {
+    border-top: 2px solid $timeline-complete-color;
+  }
+}

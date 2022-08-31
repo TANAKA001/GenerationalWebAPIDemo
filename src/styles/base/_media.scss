@@ -1,0 +1,18 @@
+/*sass-lint:disable no-vendor-prefix no-qualifying-elements*/
+
+// ==========================================================================
+// Media
+// ==========================================================================
+img {
+  border-style: none;  // Remove the border on images inside links in IE 10.
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+/*sass-lint:enable no-vendor-prefix no-qualifying-elements*/

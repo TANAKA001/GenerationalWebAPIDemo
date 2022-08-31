@@ -1,0 +1,84 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$navbar-height: 60px;
+
+
+// SCSS
+.navbar {
+  display: flex;
+  flex-direction: column;
+  background: $brand-primary;
+  padding: 0 15px;
+  color: $white;
+
+  .brand {
+    height: $navbar-height;
+    padding: 0 15px;
+  }
+
+  nav {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .nav-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: $navbar-height;
+
+        .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: $navbar-height;
+          padding: 0 10px;
+          color: $white;
+          line-height: $navbar-height;
+          text-decoration: none;
+
+          &:hover {
+            background-color: rgba($white, .1);
+          }
+        }
+      }
+    }
+  }
+
+  .nav-main {
+    flex: 1 0 auto;
+  }
+
+  .nav-secondary {
+  }
+
+  .search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    #navbar-search-input {
+      flex: 1 1 auto;
+      padding-right: 10px;
+    }
+
+    .button-group {
+      //flex: 1 1 auto;
+      //min-width: max-content;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+// ELLIPSIS TEXT
+// ===========================================
+// ELLIPSIS SINGLE-LINE
+@mixin ellipsis($width: 100%, $display: inline-block) {
+  display: $display;
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+// ELLIPSIS MULTILINE
+@mixin ellipsis-multiline($e-font-size: $font-size, $e-line-height: $line-height, $e-lines-to-show, $e-margin: "0") {
+  $height-calc: $e-font-size * $e-line-height * $e-lines-to-show;
+  display: block;
+  display: -webkit-box;
+  font-size: $e-font-size * 1px;
+  line-height: $e-line-height;
+  max-height: ($height-calc + $e-margin) * 1px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $e-lines-to-show;
+  -webkit-box-orient: vertical;
+
+  p:not(:first-of-type) {
+    display: none;
+  }
+}

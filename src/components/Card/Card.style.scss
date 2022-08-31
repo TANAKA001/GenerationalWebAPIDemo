@@ -1,0 +1,35 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+// SCSS
+.card {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  overflow: hidden;
+  margin: $spacing-xs 0;
+  box-shadow: $box-shadow;
+  border: 0;
+  border: $border-radius;
+  border-radius: $border-radius;
+  background: $white;
+
+  &.clickable {
+    cursor: pointer;
+
+    &:hover {
+      .card-body {
+        background: $white;
+      }
+    }
+  }
+
+  &.gray {
+    background-color: $gray-100;
+  }
+}
+

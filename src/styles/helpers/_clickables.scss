@@ -1,0 +1,4 @@
+// add box shadow to elements that need a focus indicator but don't have one
+.add-focus:focus {
+  @include add-focus;
+}

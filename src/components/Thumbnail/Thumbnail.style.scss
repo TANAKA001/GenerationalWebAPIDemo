@@ -1,0 +1,49 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.thumbnail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: $border-radius;
+  background-color: $info-bkg;
+
+  img {
+    position: absolute;
+    object-fit: cover;
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+  }
+
+  // SIZES
+  &.xs {}
+
+  &.sm {
+    height: 40px;
+    width: 40px;
+  }
+
+  &.md {
+    height: 130px;
+    width: 130px;
+  }
+
+  &.lg {
+    height: 280px;
+    width: 280px;
+  }
+
+  &.xl {
+    height: 280px;
+    width: 768px;
+  }
+}

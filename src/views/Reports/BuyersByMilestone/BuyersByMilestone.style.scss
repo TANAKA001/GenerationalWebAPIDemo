@@ -1,0 +1,34 @@
+// IMPORTS
+@import '../../../styles/variables/variables';
+@import '../../../styles/functions/functions';
+@import '../../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.BuyersByMilestone {
+  .key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+
+    .key-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .symbol {
+        height: 15px;
+        width: 35px;
+        background-color: $red;
+      }
+
+      .label {
+        padding: 5px;
+        font-size: $font-size-xs;
+      }
+    }
+  }
+}

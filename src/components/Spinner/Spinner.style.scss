@@ -1,0 +1,14 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.spinner {
+  color: $teal;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}

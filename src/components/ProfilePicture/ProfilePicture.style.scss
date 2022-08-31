@@ -1,0 +1,63 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$profile-size-thumb: 30px;
+$profile-size-sm: 40px;
+$profile-size-md: 86px;
+$profile-size-lg: 110px;
+
+// SCSS
+.profile-picture {
+  @include bkg-image;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .inner-circle {
+    @include circle(100%, transparent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid $white;
+    padding: 12%;
+    color: $gray-400;
+
+    .icon {
+      position: absolute;
+    }
+  }
+
+  &.thumb {
+    @include circle($profile-size-thumb, $gray-300);
+
+    .inner-circle {
+      display: none;
+    }
+  }
+
+  // SIZES
+  &.sm {
+    @include circle($profile-size-sm, $gray-300);
+
+    .inner-circle {
+      display: none;
+    }
+  }
+
+  &.md {
+    @include circle($profile-size-md, $gray-300);
+    border: 6px solid $white;
+    padding: 2px;
+  }
+
+  &.lg {
+    @include circle($profile-size-lg, $gray-300);
+    border: 10px solid $white;
+    padding: 3px;
+  }
+}

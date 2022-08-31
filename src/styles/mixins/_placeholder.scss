@@ -1,0 +1,15 @@
+// PLACEHOLDER
+// ===========================================
+// They're a pain as you have to set the style in all the separate formats, this sorts it for you.
+// Lets you set the placeholder style for an input for all browsers.
+@mixin input-placeholder { // sass-lint:disable no-vendor-prefixes
+  &.placeholder { @content; }
+
+  &:-moz-placeholder { @content; }
+
+  &::-moz-placeholder { @content; }
+
+  &:-ms-input-placeholder { @content; }
+
+  &::-webkit-input-placeholder { @content; }
+}

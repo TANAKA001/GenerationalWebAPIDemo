@@ -1,0 +1,193 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$checkbox-size: 20px;
+$checkbox-border-color: $border-color;
+$checkbox-border-color-checked: $blue;
+$checkbox-border-color-hover: $blue;
+$checkbox-background: $white;
+$checkbox-background-checked: $blue;
+$checkbox-background-hover: $blue;
+$check-width: 2px;
+$check-color: $white;
+$disabled-color: $checkbox-border-color;
+
+// SCSS
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin: $spacing-xs 0;
+
+  input[type="checkbox"] {
+    @include visually-hidden();
+
+    + label {
+      display: inline-flex;
+      position: relative;
+      align-items: flex-start;
+      //justify-content: flex-start;
+      cursor: pointer;
+      padding: 0 5px 0 0;
+      min-height: $checkbox-size;
+      line-height: $checkbox-size;
+      user-select: none;
+
+      &::before { // the checkbox
+        display: block;
+        transition: background 200ms ease-out;
+        margin-right: 10px;
+        border: 1px solid $checkbox-border-color;
+        border-radius: $border-radius;
+        background: $checkbox-background;
+        width: $checkbox-size;
+        min-width: $checkbox-size;
+        height: $checkbox-size;
+        text-align: center;
+        content: "";
+      }
+
+      &::after { // the check
+        display: block;
+        position: absolute;
+        top: $checkbox-size * .12;
+        left: $checkbox-size * .32;
+        transform: rotate(45deg);
+        transition: border-color 0.3s ease;
+        opacity: 0;
+        border-right: $check-width solid $check-color;
+        border-bottom: $check-width solid $check-color;
+        background-color: transparent;
+        width: $checkbox-size * .35;
+        height: $checkbox-size * .65;
+        content: "";
+      }
+
+      &:hover {
+        color: $checkbox-background-hover;
+
+        &::before {
+          border-color: $checkbox-border-color-hover;
+        }
+      }
+
+      .required {
+        color: $danger;
+      }
+    }
+
+    &:checked {
+      + label {
+        &::before {
+          border-color: $checkbox-border-color-checked;
+          background: $checkbox-background-checked;
+          content: "";
+        }
+
+        &::after {
+          opacity: 1;
+          content: "";
+        }
+      }
+    }
+
+    &[readonly] {
+      + label {
+        color: $readonly-color;
+        pointer-events: none;
+
+        &::before {
+          border-color: $readonly-color;
+          background: $gray-100;
+        }
+
+        &::after {
+          opacity: 0;
+        }
+
+        &:hover {
+          color: $disabled-color;
+        }
+      }
+    }
+
+    &[readonly]:checked {
+      + label {
+        &::before {
+          border-color: $readonly-color;
+          background: $readonly-color;
+        }
+
+        &::after {
+          opacity: 1;
+          border-color: $white;
+        }
+      }
+    }
+
+    &:disabled {
+      + label {
+        opacity: .6;
+        cursor: not-allowed;
+        color: $disabled-color;
+
+        &::before {
+          border-color: $disabled-color;
+          background: $gray-100;
+        }
+
+        &::after {
+          opacity: 0;
+        }
+
+        &:hover {
+          color: $disabled-color;
+        }
+      }
+    }
+
+    &:disabled:checked {
+      + label {
+        &::before {
+          border-color: $disabled-color;
+          background: $disabled-color;
+        }
+
+        &::after {
+          opacity: 1;
+          border-color: $white;
+        }
+      }
+    }
+
+    &.is-invalid {
+      + label {
+        color: $danger;
+
+        &::before {
+          border-color: $danger;
+        }
+      }
+    }
+
+    &.is-invalid:checked {
+      + label {
+        &:before {
+          background-color: $danger;
+        }
+      }
+    }
+
+    &:focus:not(:disabled) {
+      + label {
+        color: $blue-light;
+
+        &:before {
+          @include add-focus;
+        }
+      }
+    }
+  }
+}

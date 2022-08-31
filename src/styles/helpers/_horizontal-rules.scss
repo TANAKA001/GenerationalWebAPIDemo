@@ -1,0 +1,25 @@
+hr {
+  &.spacer-xs {
+    margin: 0;
+    border: 0;
+    height: $spacing-xs;
+  }
+
+  &.spacer-sm {
+    margin: 0;
+    border: 0;
+    height: $spacing-sm;
+  }
+
+  &.spacer-md {
+    margin: 0;
+    border: 0;
+    height: $spacing-md;
+  }
+
+  &.spacer-lg {
+    margin: 0;
+    border: 0;
+    height: $spacing-lg;
+  }
+}

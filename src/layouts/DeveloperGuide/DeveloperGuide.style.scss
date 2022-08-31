@@ -1,0 +1,23 @@
+// layouts/DeveloperGuide/DeveloperGuide.style.scss
+
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$sidebar-width: 315px;
+
+// SCSS
+.developer-guide {
+  flex: 1 1 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+
+  .app-body {
+    @include scrollbar;
+    flex: 1 1 auto;
+    overflow-y: auto;
+  }
+}

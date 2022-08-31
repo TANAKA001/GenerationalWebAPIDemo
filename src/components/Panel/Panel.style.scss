@@ -1,0 +1,27 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.panel {
+  display: block;
+  flex: 1 0 auto;
+  margin: $spacing-sm 0;
+  border: 0;
+  border-radius: $border-radius;
+  background-color: transparent;
+  padding: 20px;
+  overflow: hidden;
+
+  &.white {
+    background-color: $white;
+  }
+
+  &.gray {
+    background-color: $gray-100;
+  }
+}

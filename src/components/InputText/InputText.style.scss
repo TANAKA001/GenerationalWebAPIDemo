@@ -1,0 +1,89 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.input-text {
+  position: relative;
+
+  input {
+    position: relative;
+
+    &.is-invalid {
+      border-color: $danger;
+      background-color: $danger-bkg;
+      color: $danger;
+    }
+
+    &.prefix {
+      padding: {
+        left: $input-height;
+      }
+    }
+
+    &.suffix {
+      padding: {
+        right: $input-height;
+      }
+    }
+
+  }
+
+  .input-prefix-icon {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: $input-height;
+    color: $gray-700;
+  }
+
+  .input-suffix-icon {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    width: $input-height;
+    color: $gray-700;
+  }
+
+  .clear-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    bottom: 0;
+  }
+
+  .toggle-password-btn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: $white;
+    height: unset;
+    color: $gray;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &.theme-gray {
+    input {
+      background-color: $gray-200;
+    }
+  }
+}

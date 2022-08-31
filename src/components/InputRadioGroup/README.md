@@ -1,0 +1,7 @@
+# InputRadioGroup
+
+## Usage
+
+```tsx
+    <InputRadioGroup />
+```

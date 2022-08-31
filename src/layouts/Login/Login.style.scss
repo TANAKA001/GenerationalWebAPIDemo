@@ -1,0 +1,22 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+// SCSS
+.login-layout {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+  .login-col {
+    flex: 1 0 50%;
+    padding: $spacing-md;
+
+    &.left {
+      background-color: $brand-primary;
+    }
+  }
+}

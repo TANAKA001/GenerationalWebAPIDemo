@@ -1,0 +1,37 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.tab {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 0 -1px;
+  border: 2px solid transparent;
+  background: transparent;
+  padding: 0 15px;
+  color: $gray-700;
+  line-height: 30px;
+  font-weight: $font-weight-light;
+
+  &.selected {
+    border-bottom: 2px solid $teal;
+    color: $black;
+    font-weight: $font-weight-semibold;
+
+    &.danger {
+      border-bottom-color: $danger;
+      color: $danger;
+    }
+  }
+
+  .badge {
+    margin-left: 5px;
+  }
+}

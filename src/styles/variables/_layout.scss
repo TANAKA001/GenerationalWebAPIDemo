@@ -1,0 +1,55 @@
+// Spacing & Sizing
+// ==================================================
+$spacing-base: 15px;
+
+$spacing-xs:  $spacing-base - 5; // 10px
+$spacing-sm:  $spacing-base * 1; // 15px
+$spacing-md:  $spacing-base * 2; // 30px
+$spacing-lg:  $spacing-base * 4; // 60px
+$spacing-xl:  $spacing-base * 6; // 90px
+
+$spacing-section: $spacing-xl !default;
+
+$header-height:         60px !default;
+$header-height-mobile:  50px !default;
+$left-column-width: 280px;
+$footer-height: $spacing-md;
+
+
+// Media queries breakpoints
+// ==================================================
+$grid-columns:                12 !default;
+$grid-gutter-width:           1.5rem !default;
+$grid-row-columns:            12 !default;
+$grid-breakpoints: (  // bootstrap overrides
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$screen-xs:   0;
+$screen-sm:   576px;
+$screen-md:   768px;
+$screen-lg:   992px;
+$screen-xl:  1200px;
+$screen-xxl: 1400px;
+
+$target-sm-up:    'screen and (min-width: ' + $screen-sm + ')';
+$target-md-up:    'screen and (min-width: ' + $screen-md + ')';
+$target-lg-up:    'screen and (min-width: ' + $screen-lg + ')';
+$target-xl-up:    'screen and (min-width: ' + $screen-xl + ')';
+
+
+// z-index
+// ==================================================
+$zindex-dropdown:                   1000 !default;
+$zindex-sticky:                     1020 !default;
+$zindex-fixed:                      1030 !default;
+$zindex-modal-backdrop:             1040 !default;
+$zindex-modal:                      1050 !default;
+$zindex-popover:                    1060 !default;
+$zindex-tooltip:                    1070 !default;
+$zindex-toaster:                    1080 !default;

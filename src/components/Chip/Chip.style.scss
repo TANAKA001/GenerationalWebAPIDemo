@@ -1,0 +1,29 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$chip-size: 26px;
+
+// SCSS
+.chip {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  margin: 4px;
+  border: 1px solid $gray-100;
+  border-radius: ($chip-size / 2);
+  min-width: $chip-size;
+  height: $chip-size;
+  background-color: $gray-100;
+  padding: 5px 10px;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  line-height: 1em;
+
+  &.dismissible {
+    padding-right: 1px;
+  }
+
+}

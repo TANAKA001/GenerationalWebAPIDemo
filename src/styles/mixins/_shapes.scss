@@ -1,0 +1,163 @@
+// SHAPES
+// ===========================================
+// CIRCLE
+@mixin circle($size: 3rem, $fillColor: currentColor, $display: inline-flex) {
+  // sass-lint:disable-block no-vendor-prefixes
+  display: $display;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: $fillColor;
+  width: $size;
+  height: $size;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+
+  & > div,
+  & > span {
+    //display: flex;
+    //text-align: center;
+  }
+}
+
+
+// TRIANGLE
+@mixin triangle($direction: 'bottom', $fillColor: currentColor, $size: 1em, $angle: 1.5) {
+  // sass-lint:disable-block no-warn shorthand-values
+
+  $direction: if(function-exists('to-lower-case') == true, to-lower-case($direction), $direction);
+
+  @if not index("up" "up-right" "right" "down-right" "down" "down-left" "left" "up-left", $direction) {
+    @warn "Direction must be `up`, `up-right`, `right`, `down-right`, `down`, `down-left`, `left` or `up-left`. Currently `#{$direction}`.";
+  } @else {
+    border-style: solid;
+    width: 0;
+    height: 0;
+    content: '';
+
+    @if ($direction == 'up') {
+      border-width: 0 ($size) $size * $angle ($size);
+      border-color: transparent transparent $fillColor;
+    }
+
+    @if ($direction == 'down') {
+      border-width: $size * $angle $size 0 $size;
+      border-color: $fillColor transparent transparent;
+    }
+
+    @if ($direction == 'right') {
+      border-width: $size 0 $size $size * $angle;
+      border-color: transparent transparent transparent $fillColor;
+    }
+
+    @if ($direction == 'left') {
+      border-width: $size $size * $angle $size 0;
+      border-color: transparent $fillColor transparent transparent;
+    }
+
+    @if ($direction == 'up-left') {
+      border-width: $size $size 0 0;
+      border-color: $fillColor transparent transparent transparent;
+    }
+
+    @if ($direction == 'up-right') {
+      border-width: 0 $size $size 0;
+      border-color: transparent $fillColor transparent transparent;
+    }
+
+    @if ($direction == 'down-left') {
+      border-width: $size 0 0 $size;
+      border-color: transparent transparent transparent $fillColor;
+    }
+
+    @if ($direction == 'down-right') {
+      border-width: 0 0 $size $size;
+      border-color: transparent transparent $fillColor transparent;
+    }
+  }
+}
+
+
+// CHEVRON
+@mixin chevron($direction: 'right', $color: $gray, $size: 1em, $chevron-width: 3px) {
+  // sass-lint:disable-block no-warn shorthand-values
+
+  $direction: if(function-exists('to-lower-case') == true, to-lower-case($direction), $direction);
+
+  @if not index("up" "right" "down" "left", $direction) {
+    @warn "Direction must be `up`, `right`, `down`, or `left`. Currently `#{$direction}`.";
+  } @else {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: $size;
+    height: $size;
+
+    &::after {
+      display: block;
+      border: solid $color;
+      border-width: 0 $chevron-width $chevron-width 0;
+      background: transparent;
+      width: $size * .67;
+      height: $size * .67;
+      content: '';
+
+      @if ($direction == 'up') {
+        transform: translateY(25%) rotate(230deg);
+      }
+
+      @if ($direction == 'right') {
+        transform: translateX(25%) rotate(135deg);
+
+      }
+
+      @if ($direction == 'down') {
+        transform: translateY(-25%) rotate(45deg);
+      }
+
+      @if ($direction == 'left') {
+        transform: translateX(-25%) rotate(316deg);
+      }
+    }
+  }
+}
+
+
+// STAR
+@mixin star($fillColor: currentColor, $size: 1em, $denominator: 1.42) {
+  display: inline-block;
+  position: relative;
+  margin-top: $size / $denominator;
+  margin-bottom: $size / ($denominator * 1.55555555);
+  border-top-width: $size / $denominator;
+  border-right-width: $size;
+  border-left-width: $size;
+  border-style: solid;
+  border-color: $fillColor transparent transparent;
+  width: 0;
+  height: 0;
+
+  &::before,
+  &::after {
+    display: block;
+    position: absolute;
+    top: -$size / $denominator;
+    left: -$size;
+    border-top-width: $size / $denominator;
+    border-right-width: $size;
+    border-left-width: $size;
+    border-style: solid;
+    border-color: $fillColor transparent transparent;
+    width: 0;
+    height: 0;
+    content: '';
+  }
+
+  &::before {
+    transform: translate(15.5555555%, -15.5555555%) rotate(72deg) translateY(50%);
+  }
+
+  &::after {
+    transform: translate(-15.5555555%, -15.5555555%) rotate(-72deg) translateY(50%);
+  }
+}

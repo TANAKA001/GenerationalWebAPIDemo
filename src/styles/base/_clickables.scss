@@ -1,0 +1,65 @@
+// Links, buttons, and clickables
+// ==========================================================================
+a,
+button {
+  transition: .2s;
+  cursor: pointer;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: underline;  // Remove the gray background on active links in IE 10.
+  color: $blue;
+  -webkit-text-decoration-skip: objects;
+
+  &:hover {
+    text-decoration: none;
+    color: $blue-light;
+  }
+
+  &:visited{}
+}
+
+a:not([href]):not([tabindex]) {
+  text-decoration: none;
+  // color: inherit;
+}
+
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+  text-decoration: none;
+  // color: inherit;
+}
+
+a:not([href]):not([tabindex]):focus {
+  outline: 0;
+}
+
+a,
+area,
+button,
+[role="button"],
+input:not([type="range"]),
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;  // speed up any delay that might exist for touch users
+  touch-action: manipulation;  // speed up any delay that might exist for touch users
+}
+
+// add icon to indicate link to external site
+a[href]:not([href*="ampmycomics.com"])[target="_blank"] {
+  &::after {
+    display: inline-block;
+    margin-left: 5px;
+    width: 1em;
+    height: 1em;
+    content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==');
+  }
+}
+
+// ANGULAR SPECIFIC
+[ng-reflect-router-link]:not(:disabled) {
+  cursor: pointer;
+}

@@ -1,0 +1,23 @@
+// layouts/Dashboard/Dashboard.style.scss
+
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.dashboard-layout {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .app-body {
+    @include scrollbar;
+    flex: 1 1 auto;
+    overflow-y: auto;
+  }
+}

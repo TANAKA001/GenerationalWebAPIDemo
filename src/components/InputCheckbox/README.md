@@ -1,0 +1,7 @@
+# Checkbox
+
+## Usage
+
+```tsx
+<InputCheckbox />
+```

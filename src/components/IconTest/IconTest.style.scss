@@ -1,0 +1,72 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$icon-size-sm: 25px;
+$icon-size-md: 40px;
+$icon-size-lg   : 50px;
+
+// SCSS
+.icon-test {
+  display: inline-block;
+  padding: 20%;
+
+  // SIZES
+  &.sm {
+    height: $icon-size-sm;
+    width: $icon-size-sm;
+  }
+
+  &.md {
+    height: $icon-size-md;
+    width: $icon-size-md;
+  }
+
+  &.md {
+    height: $icon-size-lg;
+    width: $icon-size-lg;
+  }
+
+  // THEMES
+  &.default {
+    color: currentColor;
+  }
+
+  &.info {
+    color: $teal;
+  }
+
+  &.primary {
+    color: $teal;
+    background: $gray-200;
+    border-radius: $border-radius;
+  }
+
+  &.info {
+    color: $info;
+    background: $info-bkg;
+    border-radius: $border-radius;
+    padding: 20%;
+  }
+
+  &.success {
+    color: $success;
+    background: $success-bkg;
+    border-radius: $border-radius;
+  }
+
+  &.warning {
+    color: $warning;
+    background: $warning-bkg;
+    border-radius: $border-radius;
+  }
+
+  &.error,
+  &.danger {
+    color: $danger;
+    background: $danger-bkg;
+    border-radius: $border-radius;
+  }
+}

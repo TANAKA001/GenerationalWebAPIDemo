@@ -1,0 +1,7 @@
+// ADD FOCUS STYLES
+// ===========================================
+@mixin add-focus($f-color: $focus-color, $f-width: $focus-outline-width, $f-offset: 2px) {
+  // box-shadow: $focus-box-shadow;
+  outline: $f-width solid $f-color;
+  outline-offset: $f-offset;
+}

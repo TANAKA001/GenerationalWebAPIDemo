@@ -1,0 +1,27 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.sidebar-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  .sidebar-submenu {
+    margin: 0 0 0 $spacing-xs;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sidebar-label {
+    padding: 5px 20px;
+    color: $black;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+  }
+}

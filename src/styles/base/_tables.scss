@@ -1,0 +1,51 @@
+// Tables
+// ==========================================================================
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  vertical-align: center;
+  font: inherit;
+}
+
+table {
+  margin-bottom: $spacing-sm;
+  width: 100%;
+  border-collapse: collapse; // Prevent double borders
+  border-spacing: 0; // Prevent double borders
+  background-color: $white;
+}
+
+tr {
+  &:nth-child(even) {
+    background-color: $gray-100;
+  }
+}
+
+th, td {
+  border: 0;
+  height: 55px;
+  padding: 5px 10px;
+  text-align: left;
+  font-size: $font-size-sm;
+  font-weight: $font-weight;
+}
+
+th {
+  border-bottom: 1px solid $border-color;
+  padding: 15px 10px;
+  color: $gray-700;
+  font-weight: $font-weight-semibold;
+}
+
+td {
+  color: $gray-700;
+}
+
+caption {
+  padding-top: 0;
+  padding-bottom: 0;
+  caption-side: bottom;
+  text-align: left;
+  color: $font-color;
+}

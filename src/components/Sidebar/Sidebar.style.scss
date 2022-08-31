@@ -1,0 +1,70 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$sidebar-width: 270px;
+$sidebar-width-mobile: 200px;
+$sidebar-width-closed: 60px;
+$sidebar-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 400px
+) !default;
+
+// SCSS
+.sidebar {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: $sidebar-width-mobile;
+  min-width: $sidebar-width-mobile;
+  max-height: 100%;
+  background: $white;
+
+  @media #{$target-md-up} {
+    width: $sidebar-width;
+    min-width: $sidebar-width;
+  }
+
+  .sidebar-inner {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: $sidebar-width-mobile;
+    max-height: 100%;
+
+    @media #{$target-md-up} {
+      width: $sidebar-width;
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: $header-height;
+      padding: $spacing-md;
+
+      .brand {
+        height: 30px;
+      }
+    }
+
+    .sidebar-body {
+      @include scrollbar;
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 10px;
+    }
+
+    .sidebar-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

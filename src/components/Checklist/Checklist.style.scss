@@ -1,0 +1,37 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.check-list-block {
+
+  .check-list-heading {
+    margin-top: $spacing-sm;
+
+    &.h4 {
+      color: $black;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .check-list {
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      color: $gray-700;
+      line-height: $spacing-md;
+      font-size: $font-size;
+    }
+
+    .checked {
+      color: $green;
+    }
+  }
+}

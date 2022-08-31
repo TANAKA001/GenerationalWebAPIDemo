@@ -1,0 +1,32 @@
+// LAYOUT
+.form-group {
+  position: relative;
+
+  &-inline {
+
+  }
+}
+
+.input-block {
+  position: relative;
+  margin: 0 0 $spacing-sm;
+
+  &-inline {
+
+  }
+}
+
+// REQUIRED / OPTIONS INPUTS
+label.required {
+
+  &::before {
+    @include pseudo('inline-block', relative);
+    color: $danger;
+    content: '* ';
+  }
+}
+
+// VALIDATION {
+.is-invalid {
+
+}

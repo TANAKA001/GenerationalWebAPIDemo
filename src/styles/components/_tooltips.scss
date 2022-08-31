@@ -1,0 +1,84 @@
+.tooltip-container {
+  position: relative;
+  display: inline-flex;
+
+  .hide {
+    display: none;
+  }
+
+  &:hover {
+    .hide {
+      display: inline;
+      position: absolute;
+      bottom: 40px;
+      background-color: $white;
+      box-shadow: $box-shadow-sm;
+      padding: 15px;
+      font-size: 12px;
+
+      .auto-tagged {
+        display: inline-flex;
+        font-size: 12px;
+
+        .icon {
+          padding-right: 5px;
+        }
+
+        .mat-icon {
+          padding: 5px;
+          padding-right: 10px;
+          display: inline-flex;
+          overflow: visible;
+          color: $purple;
+          font-size: 12px;
+        }
+      }
+
+      .indicator-hover-title {
+        font-size: 14px;
+        color: $black;
+        font-weight: $font-weight-bold;
+        margin: 0 0 3px 0;
+      }
+
+      .p {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.ng-tooltip {
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  box-shadow: $box-shadow-sm;
+  border-radius: $border-radius-sm;
+  border: $border-color solid 1px;
+  max-width: 200px;
+  background: $white;
+  padding: 3px 8px;
+  color: $black;
+  font-size: $font-size-footnote;
+  text-align: center;
+}
+
+.ng-tooltip-top:after {
+  top: 100%;
+  left: 50%;
+}
+
+
+.ng-tooltip-left:after {
+  top: 50%;
+  left: 100%;
+}
+
+.ng-tooltip-right:after {
+  top: 50%;
+  right: 100%;
+}
+
+.ng-tooltip-show {
+  opacity: 1;
+}

@@ -1,0 +1,59 @@
+@import 'colors';
+@import 'typography';
+@import 'layout';
+
+// BOX SHADOW
+// ==================================================
+$box-shadow-sm:       0 3px 6px rgba($black, .05);
+$box-shadow:          0 4px 20px rgba($gray-800, .05);
+$box-shadow-lg:       0 9px 18px rgba($black, .05);
+
+
+// BORDER & BORDER RADIUS
+// ==================================================
+$border-color:        $gray-300;
+
+$border-radius:       .5rem;
+$border-radius-lg:    .8rem;
+$border-radius-sm:    .3rem;
+
+
+// BUTTONS
+// ==================================================
+//$button-height: 50px !default;
+//$button-height-sm: 35px !default;
+//$button-height-lg: 60px !default;
+//
+//$button-border-radius: $border-radius;
+//
+//$button-font-size: $font-size;
+
+
+// FORMS
+// ==================================================
+$max-form-width:      100%;
+
+$input-color:               $gray-700 !default;
+$input-border-color:        $border-color !default;
+//$input-border-width:            $input-btn-border-width !default;
+//$input-box-shadow:              inset 0 1px 1px rgba($black, .075) !default;
+
+$input-border-radius:       $border-radius;
+$input-border-radius-lg:    $border-radius-lg;
+$input-border-radius-sm:    $border-radius-sm;
+
+//$input-placeholder-color:        $gray-600 !default;
+//$input-plaintext-color:          $body-color !default;
+
+$input-height:              40px !default;
+
+$focus-color:               rgba($teal, .6);
+$focus-outline-width:       2px;
+$focus-box-shadow:          0 0 0 1px $white, 0 0 0 $focus-outline-width $focus-color;
+
+$disabled-color: $gray-400;
+$readonly-color: $gray-500;
+
+// SIDEBAR
+// ==================================================
+

@@ -1,0 +1,69 @@
+// REMOVE SCROLL BAR
+// ===========================================
+@mixin no-scroll-bar {
+  // sass-lint:disable-block no-vendor-prefixes
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 0;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    width: 0;
+    height: 0;
+  }
+}
+
+// Custom Scrollbar
+// ===========================================
+@mixin scrollbar($size: 8px, $foreground-color: rgba($white, .5), $background-color: rgba($white, .15), $radius: true) {
+
+  @if $radius == true  {
+    $radius: calc($size / 2);
+  }
+  @if $radius == false  {
+    $radius: 0;
+  }
+
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    border-radius: $radius;
+    width:  $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: $radius;
+    border-color: $background-color;
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+
+// SHOW SCROLLBAR ON HOVER
+// ===========================================
+@mixin show-scrollbar-on-hover() {
+  &::-webkit-scrollbar {
+    opacity: 0;
+  }
+
+  &::-webkit-scrollbar:hover {
+    opacity: 1;
+  }
+}

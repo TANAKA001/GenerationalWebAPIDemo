@@ -1,0 +1,103 @@
+// VARS
+$dropdown-min-width: 180px;
+$dropdown-spacer: 0;
+$dropdown-padding-y: 0;
+$dropdown-padding-x: 0;
+
+// SCSS
+.dropdown-menu {
+  display: block;
+  position: relative;
+  padding: $dropdown-padding-y $dropdown-padding-x;
+  list-style: none;
+  color: $blue;
+  font-size: $font-size-sm;
+
+  &.open {
+    display: block;
+  }
+
+  &.closed {
+    overflow: hidden;
+    height: 0;
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .dropdown-divider {
+    display: none;
+  }
+
+  .dropdown-item {
+
+    .dropdown-link {
+      display: block;
+      margin: $spacing-xs 0 0 $spacing-md;
+
+      &:hover {
+        background: $blue;
+        color: $white;
+      }
+    }
+  }
+
+  @media #{$target-md-up} {
+    //display: none; // none by default, but block on "open" of the menu
+    position: absolute;
+    top: 100%;
+    //left: 0;
+    z-index: $zindex-dropdown;
+    margin: $dropdown-spacer 0 0; // override default ul
+    border: 0;
+    box-shadow: $box-shadow-lg;
+    background-clip: padding-box;
+    background-color: $white;
+    padding: $dropdown-padding-y $dropdown-padding-x;
+    min-width: $dropdown-min-width;
+    text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+    font-size: $font-size;
+
+    &.ltr {
+      //right: unset;
+      //left: 0;
+    }
+
+    &.rtl {
+      //right: 0;
+      //left: unset;
+    }
+
+    .dropdown-item {
+
+      .dropdown-link {
+        display: block;
+        margin: 0;
+        padding: $spacing-xs $spacing-sm;
+        color: $gray-900;
+
+        &:hover {
+          background: $brand-primary;
+          color: $white;
+        }
+
+        &.active {
+          background: $gray-200;
+
+          &:hover {
+            background: $gray-200;
+            cursor: default;
+            color: $gray-900;
+          }
+        }
+      }
+    }
+
+    .dropdown-divider {
+      display: block;
+      margin: 2px 0;
+      border-width: 1px 0 0;
+      border-style: solid;
+      border-color: $gray-400;
+    }
+  }
+}

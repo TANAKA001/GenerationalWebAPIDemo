@@ -1,0 +1,110 @@
+// Styles base HTML elements
+
+/*sass-lint:disable no-vendor-prefix no-qualifying-elements*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%; // Prevent adjustments of font size after orientation changes in iOS.
+  min-height: 100%;
+  max-height: 100% !important;
+  overflow: hidden;
+  font-size: $root-pixel; //*** ROOT PIXEL ***//
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // Correct the line height in all browsers.
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+// Layout
+// ==========================================================================
+body {
+  margin: 0;
+  height: 100%;
+  min-height: 100%; // Remove the margin in all browsers.
+  max-height: 100% !important;
+  overflow: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+article,
+aside,
+footer,
+figcaption,
+figure,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+hr {
+  margin: $spacing-sm 0;
+  border-bottom: 1px solid $border-color;
+  height: 0; // Add the correct box sizing in Firefox.
+  overflow: visible; // Add the correct box sizing in Firefox.
+  box-sizing: content-box; //  Show the overflow in Edge and IE.
+}
+
+@import "./clickables";
+@import "./media";
+@import "./forms";
+@import "./lists";
+@import "./tables";
+@import "./typography";
+
+// Interactive
+// ==========================================================================
+details {
+  display: block; // Add the correct display in Edge, IE 10+, and Firefox.
+
+  &[open] {
+
+  }
+}
+
+summary {
+  display: block; // Add the correct display in all browsers.
+  cursor: pointer;
+  font: {
+    size: $font-size-lg;
+    weight: $font-weight-semibold;
+  }
+
+  &:hover {
+
+  }
+}
+
+// Misc
+// ==========================================================================
+template {
+  display: none; // Add the correct display in IE 10+.
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+:focus {
+  outline: 0;
+}
+
+[hidden] {
+  display: none; // Add the correct display in IE 10
+}
+
+/*sass-lint:enable no-vendor-prefix no-qualifying-elements*/
+
+

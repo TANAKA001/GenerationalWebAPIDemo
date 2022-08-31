@@ -1,0 +1,69 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$modal-padding: $spacing-sm;
+
+// SCSS
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  max-height: 100vh;
+  overflow: hidden;
+
+  .gobo {  // background
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background: rgba($black, .65);
+  }
+
+  .modal-dialogue {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    margin: 0 $spacing-sm;
+    border-radius: $border-radius;
+    width: 600px;
+    max-width: 600px;
+    max-height: 100vh;
+    background-color: rgba($white, 1);
+    overflow: hidden;
+
+    .modal-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-bottom: 1px solid $border-color;
+      padding: $spacing-xs $modal-padding;
+
+      .title {
+        flex: 1 0 auto;
+        font-size: $font-size-lg;
+      }
+    }
+
+    .modal-body {
+      @include no-scroll-bar;
+      flex: 0 1 auto;
+      padding: $modal-padding;
+      overflow: auto;
+    }
+
+    .modal-gutter {
+      padding: $spacing-xs $modal-padding;
+    }
+  }
+}

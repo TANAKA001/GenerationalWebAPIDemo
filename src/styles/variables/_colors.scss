@@ -1,0 +1,183 @@
+// Primary Color Palette
+// ==================================================
+$red:     rgb(255,114,144); // +
+$orange:  rgb(255,168,83); // +
+$yellow:  rgb(255,210,103); //+
+$lime:    hotpink;
+$green:   rgb(93,198,198); // +
+$teal:    hotpink;
+$cyan:    rgb(74,171,237); // +
+$blue:    #004165; // +
+$indigo:  hotpink;
+$purple:  rgb(163,117,255); // +
+$violet:  hotpink;
+
+// Brand Colors
+// ==================================================
+$brand-primary:   #004165; // +
+$brand-secondary: rgb(246,189,27); // +
+
+
+// Primary Gray Scale Palette
+// ==================================================
+$white:           white; // +
+$black:           mix($brand-primary, black, 18%);
+$gray:            mix($black, $white, 40%);
+
+$gray-100:        mix($gray, $white, 10%);
+$gray-200:        mix($gray, $white, 20%);
+$gray-300:        mix($gray, $white, 40%);
+$gray-400:        mix($gray, $white, 80%);
+$gray-500:        $gray;
+$gray-600:        mix($gray, $black, 80%);
+$gray-700:        mix($gray, $black, 65%);
+$gray-800:        mix($gray, $black, 50%);
+$gray-900:        mix($gray, $black, 30%);
+
+
+// RED
+$red-bkg:         mix($red, white, 10%);
+$red-light:       lighten($red, 10%);
+$red-dark:        darken($red, 15%);
+
+// VIOLET
+$violet-bkg:      mix($violet, white, 10%);
+$violet-light:    lighten($violet, 15%);
+$violet-dark:     darken($violet, 15%);
+
+// PURPLE
+$purple-bkg:      mix($purple, white, 10%);
+$purple-light:    lighten($purple, 15%);
+$purple-dark:     darken($purple, 15%);
+
+// INDIGO
+$indigo-bkg:      mix($indigo, white, 10%);
+$indigo-light:    lighten($indigo, 15%);
+$indigo-dark:     darken($indigo, 15%);
+
+// BLUE
+$blue-bkg:        mix($blue, white, 8%);
+$blue-light:      lighten($blue, 15%);
+$blue-dark:       darken($blue, 15%);
+
+// CYAN
+$cyan-bkg:        mix($cyan, white, 8%);
+$cyan-light:      lighten($cyan, 15%);
+$cyan-dark:       darken($cyan, 15%);
+
+// TEAL
+$teal-bkg:        mix($teal, white, 8%);
+$teal-light:      lighten($teal, 5%);
+$teal-dark:       darken($teal, 10%);
+
+// GREEN
+$green-bkg:       mix($green, white, 8%);
+$green-light:		  lighten($green, 12%);
+$green-dark:      darken($green, 10%);
+
+// LIME
+$lime-bkg:        mix($lime, white, 8%);
+$lime-light:		  lighten($lime, 12%);
+$lime-dark:       darken($lime, 10%);
+
+// YELLOW
+$yellow-bkg:      mix($yellow, white, 8%);
+$yellow-light:		lighten($yellow, 20%);
+$yellow-dark:     darken($yellow, 10%);
+
+// ORANGE
+$orange-bkg:      mix($orange, white, 9%);
+$orange-light:    lighten($orange, 15%);
+$orange-dark:     darken($orange, 17%);
+
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+    (
+      "blue-bkg":     $blue-bkg,
+      "blue-light":   $blue-light,
+      "blue":         $blue,
+      "blue-dark":    $blue-dark,
+      "indigo-bkg":   $indigo-bkg,
+      "indigo-light": $indigo-light,
+      "indigo":       $indigo,
+      "indigo-dark":  $indigo-dark,
+      "purple-bkg":     $purple-bkg,
+      "purple-light":     $purple-light,
+      "purple":     $purple,
+      "purple-dark":     $purple-dark,
+      "violet-bkg":     $violet-bkg,
+      "violet-light":     $violet-light,
+      "violet":     $violet,
+      "violet-dark":     $violet-dark,
+      "red-bkg":        $red-bkg,
+      "red-light":        $red-light,
+      "red":        $red,
+      "red-dark":        $red-dark,
+
+      "orange":     $orange,
+      "yellow":     $yellow,
+
+      "lime-bkg":       $lime-bkg,
+      "lime-light":       $lime-light,
+      "lime":       $lime,
+      "lime-dark":       $lime-dark,
+      "green-bkg":      $green-bkg,
+      "green-light":      $green-light,
+      "green":      $green,
+      "green-dark":      $green-dark,
+      "teal-bkg":       $teal-bkg,
+      "teal-light":       $teal-light,
+      "teal":       $teal,
+      "teal-dark":       $teal-dark,
+      "cyan-bkg":       $cyan-bkg,
+      "cyan-light":       $cyan-light,
+      "cyan":       $cyan,
+      "cyan-dark":       $cyan-dark,
+
+      "white":      $white,
+      "gray":       $gray-500,
+      "gray-dark":  $gray-800
+    ),
+    $colors
+);
+
+
+// Utility Colors
+// ==================================================
+$primary:       $cyan;
+$secondary:     $gray-600;
+$success:       rgba(92, 193, 165, 1); // +
+$info:          $teal;
+$warning:       $orange-dark;
+$danger:        rgba(240, 76, 92, 1); // +
+$light:         $gray-100;
+$dark:          $gray-900;
+
+
+// Theme Colors
+// ==================================================
+$danger-bkg: rgba($danger, .1);
+$warning-bkg: rgba($warning, .15);
+$info-bkg: rgba(117, 157, 162, 0.1); // +
+$success-bkg: rgba($success, .2);
+
+
+// Helper Colors
+// ==================================================
+$hover: rgba($white, .8);
+$selected: rgba($white, .6);
+
+
+// Gradients
+// ==================================================
+
+
+
+// SOCIAL NETWORK BRAND COLORS
+// ==================================================
+$facebook-blue:   #3b5998;  // +
+$twitter-blue:    #1da1f2;  // +
+$linkedin-blue:   #2867b2;  // +
+$pinterest-red:   #e60023;  // +

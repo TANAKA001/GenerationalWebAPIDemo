@@ -1,0 +1,19 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+// SCSS
+.card-image {
+  display: block;
+  flex-basis: auto;
+  height: 100px;
+  min-height: 100px;
+  background-color: $gray-300;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+

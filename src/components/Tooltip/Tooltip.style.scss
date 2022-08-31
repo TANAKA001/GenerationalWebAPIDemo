@@ -1,0 +1,26 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  color: rgba($info, .75);
+  font-size: $font-size-sm;
+
+  &:hover {
+    color: rgba($info, 1);
+  }
+}
+
+.tip {
+  font-weight: $font-weight-normal;
+  text-transform: none;
+  letter-spacing: 0;
+}

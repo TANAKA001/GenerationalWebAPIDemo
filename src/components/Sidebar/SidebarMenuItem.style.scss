@@ -1,0 +1,42 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SCSS
+.sidebar-menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: $border-radius;
+  width: 100%;
+  padding: 5px 20px;
+  color: $gray-500;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $gray-100;
+    color: $black;
+  }
+
+  &.active {
+    background-color: $gray-200;
+    color: $black;
+    font-weight: $font-weight-semibold;
+  }
+
+  .menu-item-icon {
+    padding: 5px;
+  }
+
+  .menu-item-label {
+    flex: 1 0 auto;
+  }
+
+  .menu-item-badge {
+    padding: 5px;
+  }
+}

@@ -1,0 +1,74 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$spacing-section: $spacing-lg;
+$max-container-width: 1140px;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+// SCSS
+.section {
+  display: block;
+  position: relative;
+  padding: $spacing-section 0;
+  width: 100%;
+  max-width: 100vw;
+
+  // SPACING
+  &.spacing-none {
+    padding: 0;
+  }
+
+  &.spacing-xs {
+    padding: $spacing-xs 0;
+  }
+
+  &.spacing-sm {
+    padding: $spacing-sm 0;
+  }
+
+  &.spacing-md {
+    padding: $spacing-md 0;
+  }
+
+  &.spacing-lg {
+    padding: $spacing-lg 0;
+  }
+}
+
+// LAYOUT
+.container {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 $spacing-sm;
+  width: 100%;
+  max-width: $max-container-width;
+
+  &.fluid {
+    max-width: 100%;
+  }
+
+  //@media #{$target-sm-up} {
+  //  max-width: $container-max-widths['sm'];
+  //}
+  //
+  //@media #{$target-md-up} {
+  //  max-width: $container-max-widths['md'];
+  //}
+  //
+  //@media #{$target-lg-up} {
+  //  max-width: $container-max-widths['lg'];
+  //}
+
+  //@media #{$target-lg-xl} {
+  //  max-width: $container-max-widths(xl);
+  //}
+}

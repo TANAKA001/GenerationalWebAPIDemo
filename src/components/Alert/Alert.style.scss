@@ -1,0 +1,47 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$alert-padding: $spacing-sm;
+
+// SCSS
+.alert {
+  display: block;
+  position: relative;
+  margin: $spacing-xs auto;
+  border-radius: $border-radius;
+  padding: $alert-padding;
+
+  &.dismissible {
+    padding-right: 45px;
+  }
+
+  &.default {
+    @include theme-light;
+  }
+
+  &.info {
+    @include theme-info;
+  }
+
+  &.danger {
+    @include theme-danger;
+  }
+
+  &.warning {
+    @include theme-warning;
+  }
+
+  &.success {
+    @include theme-success;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+

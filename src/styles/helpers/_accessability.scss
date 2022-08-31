@@ -1,0 +1,7 @@
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.sr-only {
+  @include visually-hidden;
+}

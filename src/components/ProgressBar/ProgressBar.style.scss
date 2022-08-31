@@ -1,0 +1,96 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+$progress-bar-height: 20px;
+$grid-border-color: $gray-300;
+
+// SCSS
+.progress-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  margin: 0;
+
+  .label {
+    @include ellipsis;
+    width: 120px;
+    min-width: 120px;
+    padding-right: 5px;
+    font-size: $font-size-xs;
+    text-align: right;
+  }
+
+  .progress {
+    position: relative;
+    flex: 1 1 auto;
+    height: $progress-bar-height + 10px;
+    padding: 5px 0;
+
+    .bar-container {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    .bar {
+      overflow: hidden;
+      background-color: $green;
+      height: $progress-bar-height;
+
+      // COLORS
+      &-red { background-color: $red }
+      &-orange { background-color: $orange }
+      &-yellow { background-color: $yellow }
+      &-green { background-color: $green }
+      &-cyan { background-color: $cyan }
+      &-pruple { background-color: $purple }
+      &-gray { background-color: $gray }
+    }
+
+    .bkg-grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      border: 1px solid $grid-border-color;
+
+      .vr {
+        width: 1px;
+        min-width: 1px;
+        background-color: $grid-border-color;
+      }
+    }
+
+    .percent {
+      color: $white;
+    }
+
+  }
+
+  .percent {
+    padding: 0 $spacing-sm;
+    position: absolute;
+    z-index: 1;
+    font-size: $font-size-sm;
+    line-height: $progress-bar-height;
+  }
+}
+
+.progress-bar + .progress-bar .bkg-grid {
+  border-top: none;
+}

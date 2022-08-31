@@ -1,0 +1,49 @@
+// ==================================================
+// Typography
+// ==================================================
+
+// FONTS PATH
+$font-path: '../fonts';
+
+// FONT FAMILY
+$font-family-sans-serif:  montserrat, sans-serif; //'Cabin', Arial, sans-serif;
+$font-family-serif:       'Bree Serif', Georgia, 'Times New Roman', Times, serif;
+$font-family-monospace:   'Roboto Mono', Consolas, 'Liberation Mono', monospace;
+
+$font-family-base:        $font-family-sans-serif;
+
+// FONT SIZES
+$root-pixel:         10px;   // the font size on the HTML tag
+$font-size-base:     1.6rem;
+
+$font-size-footnote: 1.1rem;  // 12 px min is recommended min size for readability
+$font-size-xs:       1.2rem;
+$font-size-sm:       1.4rem;
+$font-size:          $font-size-base;
+$font-size-lg:       1.8rem;
+//$font-size-xl:       2.4rem;
+
+// LINE HEIGHT
+$line-height-sm:    1.2;
+$line-height:       1.4;
+$line-height-lg:    1.8;
+
+$line-height-base:  $line-height;
+
+// FONT COLOR
+$font-color: $gray-700;
+$heading-color: $gray-900;
+
+// FONT WEIGHT
+$font-weight-extra-light: 200;
+$font-weight-light:       300;
+$font-weight-normal:      400;
+$font-weight-semibold:    600;
+$font-weight-bold:        700;
+$font-weight-extra-bold:  800;
+
+$font-weight-base:    $font-weight-normal;
+$font-weight:         $font-weight-normal;
+
+// max width comfortable for large paragraphs of text on the web.
+$max-paragraph-width: 720px;

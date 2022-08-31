@@ -1,0 +1,88 @@
+// IMPORTS
+@import '../../styles/variables/variables';
+@import '../../styles/functions/functions';
+@import '../../styles/mixins/mixins';
+
+// VARIABLES
+
+
+// SASS
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  height: 40px;
+  padding: 0 1rem;
+  overflow: hidden;
+  list-style: none;
+}
+
+.breadcrumbs > * {
+  float: left;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1;
+  color: $gray-700;
+  font-size: $font-size-sm;
+}
+
+.breadcrumbs > *:hover a,
+.breadcrumbs > *:focus a {
+  text-decoration: underline;
+}
+
+.breadcrumbs > * a {
+  color: $blue;
+}
+
+.breadcrumbs > *.current {
+  cursor: default;
+  color: #333;
+}
+
+.breadcrumbs > *.current a {
+  cursor: default;
+  color: $gray-700;
+}
+
+.breadcrumbs > *.current:hover,
+.breadcrumbs > *.current:hover a,
+.breadcrumbs > *.current:focus,
+.breadcrumbs > *.current:focus a {
+  text-decoration: none;
+}
+
+.breadcrumbs > *.unavailable {
+  color: $gray;
+}
+
+.breadcrumbs > *.unavailable a {
+  color: $gray;
+}
+
+.breadcrumbs > *.unavailable:hover,
+.breadcrumbs > *.unavailable:hover a,
+.breadcrumbs > *.unavailable:focus,
+.breadcrumbs > *.unavailable a:focus {
+  cursor: not-allowed;
+  text-decoration: none;
+  color: $gray;
+}
+
+.breadcrumbs > *::before {
+  position: relative;
+  top: 1px;
+  margin: 0 .75rem;
+  color: #aaa;
+  content: '/';
+}
+
+.breadcrumbs > *:first-child::before {
+  margin: 0;
+  content: ' ';
+}
+
+[aria-label='breadcrumbs'] [aria-hidden='true']::after {
+  content: '/';
+}
