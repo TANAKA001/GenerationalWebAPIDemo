@@ -64,6 +64,7 @@ const NewClientEntryEdit = () => {
                 <Column sm={"4"}>
                   <InputText
                     label={"Company Name"}
+                    required
                     placeholder={"Company Name"}
                     value={""}
                     onValueChange={() => null}
@@ -112,6 +113,7 @@ const NewClientEntryEdit = () => {
                   <InputText
                     type={"number"}
                     label={"Primary NAICS"}
+                    required
                     placeholder={"#"}
                     value={""}
                     onValueChange={() => null}
@@ -121,6 +123,7 @@ const NewClientEntryEdit = () => {
                   <InputText
                     type={"number"}
                     label={"Primary SIC"}
+                    required
                     placeholder={"#"}
                     value={""}
                     onValueChange={() => null}
@@ -182,7 +185,7 @@ const NewClientEntryEdit = () => {
                 <ButtonGroup align={"right"}>
                   <Button theme={"primary"}>Save</Button>
                   <Button theme={"primary-outline"}>Cancel</Button>
-                  <Button theme={"primary-outline"}>Reset</Button>
+                  <Button theme={"primary-outline"}>Clear Changes</Button>
                 </ButtonGroup>
               </Row>
             </Panel>

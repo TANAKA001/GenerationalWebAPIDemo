@@ -21,9 +21,11 @@ export interface InputWrapperProps {
 const InputWrapper: FC<InputWrapperProps> = (props: InputWrapperProps) => {
   return (
     <div id={props.id} className='input-wrapper' data-testid='InputWrapper'>
-      <InputLabel required={props.required} for={props.id} srOnlyLabel={props.srOnlyLabel} moreInfo={props.moreInfo}>
-        {props.label}
-      </InputLabel>
+      {props.label && (
+        <InputLabel required={props.required} for={props.id} srOnlyLabel={props.srOnlyLabel} moreInfo={props.moreInfo}>
+          {props.label}
+        </InputLabel>
+      )}
 
       {props.children}
 
