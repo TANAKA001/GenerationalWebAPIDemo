@@ -1,14 +1,29 @@
 // views/Settings/Settings.tsx
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Settings.style.scss";
 
 import Card from "../../components/Card/Card";
 import Section from "../../components/Grid/Section";
 import Row from "../../components/Grid/Row";
 import Column from "../../components/Grid/Column";
+import ClientService from "../../services/client.service";
+import { skipWhile, take } from "rxjs";
 
 const Settings = () => {
+  const [clients, setClients] = useState([]);
+
+  useEffect(() => {
+    ClientService.getAll()
+      .pipe(
+        skipWhile(value => !value),
+        take(1)
+      )
+      .subscribe((clients: any) => {
+        setClients(clients);
+        console.log(clients);
+      })
+  }, [])
 
   return (
     <div className={"Settings"} data-testid={"Settings"}>

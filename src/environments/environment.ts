@@ -10,7 +10,7 @@ const env = {
   performance: true, // No idea what this is for but I like the name
 
   api: {
-    url: "//localhost:3000/", // the base URL for the RestAPI
+    url: "//localhost:9090/", // the base URL for the RestAPI
     timeout: 50000, // (MS) timeout all requests after # of MS
     allowedMethods: ["GET", "POST", "PUT", "PATCH", "DELETE"], // "CONNECT", "OPTIONS", "TRACE"
     log: false, // log all api calls
